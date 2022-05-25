@@ -11,26 +11,46 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
+/**
+ * Clase MyFrame
+ * @author Guillermo
+ */
 public class MyFrame extends JFrame {
-    //Variables para guardar los valores del JTextField
+    /**
+     * Variable para guardar los valores del JTextField
+     */
     public String nom, habitat, nubosidad, fuerza_viento, direccion_viento, sexo, temperatura,
     profunditat, mida, pes, parasitos, fecha, velocitat, embarcaciones, num_anzuelos, navegacion,
     cebo, tipus;
-    String server = "jdbc:mysql://mysql-wikiggines.alwaysdata.net/"; //Variable para guardar el host de la BDD (alwaysdata)
-    String user = "268265"; //Variable para el usuario de la BDD
-    String password = "ggines153T"; //Variable para la contraseña de la BDD
+    /**
+     * Variable para guardar el host de la BDD (alwaysdata)
+     */
+    String server = "jdbc:mysql://mysql-wikiggines.alwaysdata.net/";
+    /**
+     * Variable para el usuario de la BDD
+     */
+    String user = "268265";
+    /**
+     * Variable para la contraseña de la BDD
+     */
+    String password = "ggines153T";
 
+    /**
+     * Método que establece el tamaño, el título y la posición de la ventana, entre otras cosas
+     */
     public MyFrame(){
-        this.setSize(900,600); //Establece tamaño de la ventana
-        this.setTitle("Formulario"); //Título de la ventana
-        this.setLocation(250,200); //Posición inicial de la ventana
+        this.setSize(900,600); //Establece el tamaño de la ventana
+        this.setTitle("Formulario"); //Establece el título de la ventana
+        this.setLocation(250,200); //Establece la posición inicial de la ventana
         panelComponents(); //Añade el método panelComponents
-        this.setVisible(true); //Hace la ventana visible
+        this.setVisible(true); //Hace que la ventana sea visible
         this.setResizable(false); //Hace que la ventana no se pueda redimensionar
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Permite finalizar el programa al cerrar la ventana
     }
 
+    /**
+     * Método que crea los componentes y el panel. También configura la posición, tamaño y otras cosas de los componentes
+     */
     public void panelComponents(){
         JPanel panel = new JPanel(); //Crea un panel
         panel.setLayout(null); //Desactiva el layout por defecto para colocar los componentes en cualquier sitio
@@ -75,6 +95,7 @@ public class MyFrame extends JFrame {
         anzuelos.setBounds(490,420,200,30);
         Jcebo.setBounds(650,420,200,30);
         tipo.setBounds(50,420,200,30);
+
         //Establece el tipo de letra y tamaño
         title.setFont(new Font("Inconsalata-g",Font.BOLD,30));
         especie.setFont(new Font("Inconsalata-g",Font.BOLD,17));
@@ -95,6 +116,7 @@ public class MyFrame extends JFrame {
         anzuelos.setFont(new Font("Inconsalata-g",Font.BOLD,17));
         Jcebo.setFont(new Font("Inconsalata-g",Font.BOLD,17));
         tipo.setFont(new Font("Inconsalata-g",Font.BOLD,17));
+
         //Establece el color de las etiquetas
         title.setForeground(new Color(0, 103, 180));
         especie.setForeground(new Color(0, 103, 180));
@@ -120,11 +142,13 @@ public class MyFrame extends JFrame {
         String [] especies = {"**Selecciona un tipo de especie**","Aves","Peces","Mamíferos"};
         String [] prsitos = {"Sí","No"};
         String [] tipos = {"Placentario","Marsupial","Monotrema"};
+
         //Creación de listas desplegables
         JComboBox list = new JComboBox(especies);
         JComboBox list2 = new JComboBox(prsitos);
         JComboBox list3 = new JComboBox(tipos);
-        //Creación campos de texto
+
+        //Creación de los campos de texto
         JTextField campo_especie = new JTextField();
         JTextField campo_habitat = new JTextField();
         JTextField campo_profundidad = new JTextField();
@@ -142,10 +166,12 @@ public class MyFrame extends JFrame {
         JTextField campo_anzuelos = new JTextField();
         JTextField campo_cebo = new JTextField();
 
-        //Crea un boton
+        //Crea el botón guardar
         JButton guardar = new JButton("Guardar");
+
         //Establece la posición del botón
         guardar.setBounds(50,55,100,30);
+
         //Establece la posición de la lista deplegable y los campos de texto
         list.setBounds(580, 60, 270,30);
         list2.setBounds(650,370,80,25);
@@ -191,13 +217,13 @@ public class MyFrame extends JFrame {
         Mamiferos mamifero = new Mamiferos(nom,habitat,nubosidad,fuerza_viento,direccion_viento,sexo,temperatura,
                 profunditat,mida,pes,parasitos,fecha,tipus);
 
-        //Permite cuantos carácteres se pueden ingresar en los campos de texto
+        //KeyListeners que permiten cuantos caracteres se pueden ingresar en los campos de texto
         //De esta manera se evitan errores cuando se envian los datos a mySQL
         campo_velocidad.addKeyListener(
                 new KeyListener() {
                     @Override
                     public void keyTyped(KeyEvent e) {
-                        //El campo velocidad solo admite 6 carácteres como máximo
+                        //El campo velocidad solo admite 6 caracteres como máximo
                         if(campo_velocidad.getText().length() == 6){
                             e.consume();
                         }
@@ -220,7 +246,7 @@ public class MyFrame extends JFrame {
                 new KeyListener() {
                     @Override
                     public void keyTyped(KeyEvent e) {
-                        //El campo peso solo admite 6 carácteres como máximo
+                        //El campo peso solo admite 6 caracteres como máximo
                         if(campo_peso.getText().length() == 6){
                             e.consume();
                         }
@@ -243,7 +269,7 @@ public class MyFrame extends JFrame {
                 new KeyListener() {
                     @Override
                     public void keyTyped(KeyEvent e) {
-                        //El campo size solo admite 6 carácteres como máximo
+                        //El campo size solo admite 6 caracteres como máximo
                         if(campo_size.getText().length() == 6){
                             e.consume();
                         }
@@ -266,7 +292,7 @@ public class MyFrame extends JFrame {
                 new KeyListener() {
                     @Override
                     public void keyTyped(KeyEvent e) {
-                        //El campo profundidad solo admite 4 carácteres como máximo
+                        //El campo profundidad solo admite 4 caracteres como máximo
                         if(campo_profundidad.getText().length() == 4){
                             e.consume();
                         }
@@ -289,7 +315,7 @@ public class MyFrame extends JFrame {
                 new KeyListener() {
                     @Override
                     public void keyTyped(KeyEvent e) {
-                        //El campo temperatura solo admite 2 carácteres como máximo
+                        //El campo temperatura solo admite 2 caracteres como máximo
                         if(campo_temperatura.getText().length() == 2){
                             e.consume();
                         }
@@ -312,7 +338,7 @@ public class MyFrame extends JFrame {
                 new KeyListener() {
                     @Override
                     public void keyTyped(KeyEvent e) {
-                        //El campo anzuelos solo admite 3 carácteres como máximo
+                        //El campo anzuelos solo admite 3 caracteres como máximo
                         if(campo_anzuelos.getText().length() == 3){
                             e.consume();
                         }
@@ -335,7 +361,7 @@ public class MyFrame extends JFrame {
                 new KeyListener() {
                     @Override
                     public void keyTyped(KeyEvent e) {
-                        //El campo embarcaciones solo admite 4 carácteres como máximo
+                        //El campo embarcaciones solo admite 3 caracteres como máximo
                         if(campo_embarcaciones.getText().length() == 3){
                             e.consume();
                         }
@@ -354,12 +380,12 @@ public class MyFrame extends JFrame {
                 }
         );
 
-
         //ActionListener para guardar los valores de los campos en variables
+        //Se guardan los valores según la especie
        guardar.addActionListener(
                new ActionListener() {
                    public void actionPerformed(ActionEvent ev) {
-                       //Se guardan los valores según la especie
+                       //Si se selecciona 'Aves' en la lista desplegable, los valores se guardan para el objeto ave
                        if(list.getSelectedItem() == "Aves"){
                            ave.setNom(campo_especie.getText());
                            ave.setHabitat(campo_habitat.getText());
@@ -400,6 +426,7 @@ public class MyFrame extends JFrame {
                                throw new IllegalStateException("Cannot connect the database!", e);
                            }
                        }
+                       //Si se selecciona 'Peces' en la lista desplegable, los valores se guardan para el objeto pez
                        else if(list.getSelectedItem() == "Peces"){
                            pez.setNom(campo_especie.getText());
                            pez.setHabitat(campo_habitat.getText());
@@ -446,6 +473,7 @@ public class MyFrame extends JFrame {
                                throw new IllegalStateException("Cannot connect the database!", e);
                            }
                        }
+                       //Si se selecciona 'Mamíferos' en la lista desplegable, los valores se guardan para el objeto mamífero
                        else if(list.getSelectedItem() == "Mamíferos"){
                            mamifero.setNom(campo_especie.getText());
                            mamifero.setHabitat(campo_habitat.getText());
@@ -490,11 +518,12 @@ public class MyFrame extends JFrame {
                 }
         );
 
-        //ActionListener para mostrar campos según la especie
+        //ActionListener para mostrar los campos según la especie
         list.addActionListener(
                 new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
+                        //Si se selecciona 'Aves' en la lista desplegable, solo se muestran los campos por defecto y el de aves
                         if(list.getSelectedItem() == "Aves"){
                             Jnavegacion.setVisible(false);
                             Jembarcaciones.setVisible(false);
@@ -509,6 +538,7 @@ public class MyFrame extends JFrame {
                             velocidad.setVisible(true);
                             campo_velocidad.setVisible(true);
                         }
+                        //Si se selecciona 'Peces' en la lista desplegable, solo se muestran los campos por defecto y los de peces
                         else if(list.getSelectedItem() == "Peces"){
                             velocidad.setVisible(false);
                             tipo.setVisible(false);
@@ -523,6 +553,7 @@ public class MyFrame extends JFrame {
                             campo_anzuelos.setVisible(true);
                             campo_cebo.setVisible(true);
                         }
+                        //Si se selecciona 'Mamíferos' en la lista desplegable, solo se muestran los campos por defecto y el de mamíferos
                         else if(list.getSelectedItem() == "Mamíferos"){
                             velocidad.setVisible(false);
                             Jnavegacion.setVisible(false);
@@ -537,6 +568,7 @@ public class MyFrame extends JFrame {
                             tipo.setVisible(true);
                             list3.setVisible(true);
                         }
+                        //Si la lista desplegable se deja sin seleccionar especie, solo se muestran los campos por defecto
                         else if(list.getSelectedItem() == "**Selecciona un tipo de especie**"){
                             velocidad.setVisible(false);
                             campo_velocidad.setVisible(false);
@@ -555,8 +587,8 @@ public class MyFrame extends JFrame {
                 }
         );
 
-        //Añade los componentes
         this.getContentPane().add(panel); //Añade el panel
+        //Añade los componentes
         panel.add(title);
         panel.add(especie);
         panel.add(Jhabitat);
