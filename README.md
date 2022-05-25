@@ -23,6 +23,8 @@ El campo específico es 'Tiempo de navegación', 'Nº embarcaciones', 'Nº anzue
 
 El campo específico es 'Tipo de mamífero'
 
+# Base de datos
+
 Una vez introducidos los datos, estos se pueden guardar en una BDD de alwaysdata al darle al botón de 'Guardar'
 
 La base de datos está creada con el siguiente archivo sql:
