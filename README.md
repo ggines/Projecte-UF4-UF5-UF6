@@ -9,7 +9,7 @@ La aplicación consiste en un formulario dónde el usuario puede introducir dato
 
 Las 3 especies que hay son: aves, peces y mamíferos
 
-Cada especie tiene unos campos de texto específicos:
+Al seleccionar la especie aparecen unos campos de texto específicos:
 
 **Ave:**
 
