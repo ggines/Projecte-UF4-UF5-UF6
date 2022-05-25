@@ -3,6 +3,8 @@ Aplicación con interfaz gráfica para introducir valores y guardarlos en una BD
 
 https://github.com/ggines/Projecte-UF4-UF5-UF6/tree/master
 
+**Descripción de la aplicación:**
+
 La aplicación consiste en un formulario dónde el usuario puede introducir datos. 
 
 Las 3 especies que hay son: aves, peces y mamíferos
@@ -22,3 +24,6 @@ El campo específico es 'Tiempo de navegación', 'Nº embarcaciones', 'Nº anzue
 El campo específico es 'Tipo de mamífero'
 
 Una vez introducidos los datos, estos se pueden guardar en una BDD de alwaysdata al darle al botón de 'Guardar'
+
+La base de datos está creada con el siguiente archivo sql:
+
