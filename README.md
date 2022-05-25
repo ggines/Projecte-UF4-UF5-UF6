@@ -29,5 +29,5 @@ Una vez introducidos los datos, estos se pueden guardar en una BDD de alwaysdata
 
 La base de datos está creada con el siguiente archivo sql:
 
-https://github.com/ggines/Projecte-UF4-UF5-UF6/blob/master/projecteString.sql
+https://github.com/ggines/Projecte-UF4-UF5-UF6/blob/master/projecteDB.sql
 
