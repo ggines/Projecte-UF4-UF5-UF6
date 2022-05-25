@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/UF4-UF5-UF6-Projecte.iml" filepath="$PROJECT_DIR$/UF4-UF5-UF6-Projecte.iml" />
+      <module fileurl="file://$PROJECT_DIR$/org.catshark.aplicacio/org.catshark.aplicacio.iml" filepath="$PROJECT_DIR$/org.catshark.aplicacio/org.catshark.aplicacio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/org.catshark.graphics/org.catshark.graphics.iml" filepath="$PROJECT_DIR$/org.catshark.graphics/org.catshark.graphics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/org.catshark.program/org.catshark.program.iml" filepath="$PROJECT_DIR$/org.catshark.program/org.catshark.program.iml" />
+    </modules>
+  </component>
+</project>
