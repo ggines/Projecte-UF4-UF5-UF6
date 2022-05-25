@@ -17,7 +17,7 @@ El campo específico es 'Velocidad'
 
 **Peces:**
 
-El campo específico es 'Tiempo de navegación', 'Nº embarcaciones', 'Nº anzuelos' y 'Tipo de cebo'
+Los campos específicos son 'Tiempo de navegación', 'Nº embarcaciones', 'Nº anzuelos' y 'Tipo de cebo'
 
 **Mamíferos:**
 
