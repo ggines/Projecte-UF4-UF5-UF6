@@ -45,7 +45,7 @@ public class Mamiferos extends Especies{
         return this.tipus;
     }
     /**
-     * Método setter para recoger el valor de la variable 'Tipus'
+     * Método setter para establecer el valor de la variable 'Tipus'
      */
     public void setTipus(String tipus) {
         this.tipus = tipus;
