@@ -32,3 +32,5 @@ La base de datos está creada con el siguiente archivo sql:
 https://github.com/ggines/Projecte-UF4-UF5-UF6/blob/master/projecteDB.sql
 
 # JavaDocs
+
+La aplicación se ha documentado para generar el JavaDocs. Este tiene una descripción de las clases, métodos y variables:
