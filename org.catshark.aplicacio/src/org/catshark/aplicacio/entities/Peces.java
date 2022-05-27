@@ -6,7 +6,7 @@ package org.catshark.aplicacio.entities;
 //Subclase de Especies
 public class Peces extends Especies{
     /**
-     * Atributo específicos de la clase peces
+     * Atributo específico de la clase peces
      */
     private String embarcaciones, num_anzuelos, navegacion, cebo;
     /**
