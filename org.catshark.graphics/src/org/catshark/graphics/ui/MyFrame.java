@@ -25,15 +25,15 @@ public class MyFrame extends JFrame {
     /**
      * Variable para guardar el host de la BDD (alwaysdata)
      */
-    String server = "jdbc:mysql://mysql-wikiggines.alwaysdata.net/";
+    private final String server = "jdbc:mysql://mysql-wikiggines.alwaysdata.net/";
     /**
      * Variable para el usuario de la BDD
      */
-    String user = "268265";
+    private final String user = "268265";
     /**
      * Variable para la contraseña de la BDD
      */
-    String password = "ggines153T";
+    private final String password = "ggines153T";
 
     /**
      * Método que establece el tamaño, el título y la posición de la ventana, entre otras cosas
