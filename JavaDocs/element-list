@@ -1,0 +1,6 @@
+module:org.catshark.aplicacio
+org.catshark.aplicacio.entities
+module:org.catshark.graphics
+org.catshark.graphics.ui
+module:org.catshark.program
+org.catshark.program.ui
