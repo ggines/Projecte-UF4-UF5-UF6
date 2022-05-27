@@ -1,10 +1,5 @@
 package org.catshark.program.ui;
 import org.catshark.graphics.ui.MyFrame;
-import org.catshark.aplicacio.entities.*;
-import java.sql.*;
-import javax.sql.*;
-import java.time.LocalDate;
-import java.util.Scanner;
 
 /**
  * Clase Application
