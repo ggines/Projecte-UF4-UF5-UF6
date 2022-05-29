@@ -36,3 +36,7 @@ https://github.com/ggines/Projecte-UF4-UF5-UF6/blob/master/projecteDB.sql
 La aplicación se ha documentado para generar el JavaDoc. Este tiene una descripción de las clases, métodos y variables:
 
 https://github.com/ggines/Projecte-UF4-UF5-UF6/tree/master/JavaDocs
+
+# Captura de la interfaz de la aplicación
+![image](https://user-images.githubusercontent.com/95416761/170885404-60a57c16-de66-4009-a404-233f4f975751.png)
+
